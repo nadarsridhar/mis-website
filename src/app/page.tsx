@@ -367,7 +367,7 @@ export default function LandingPage() {
                     <input
                      required
                       type="text"
-                      rows="7"
+                      // rows={7}
                       placeholder="Name"
                       className="w-full bg-blue-50 text-black rounded-lg px-6 py-3 outline-blue-700 "
                     />
@@ -389,7 +389,7 @@ export default function LandingPage() {
                   {/* Message */}
                   <textarea
                     placeholder="Message"
-                    rows="5"
+                    // rows="5"
                     className="w-full bg-blue-50 text-black rounded-lg  outline-blue-700 resize-none mt-10 p-5  "
                   ></textarea>
 

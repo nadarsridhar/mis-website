@@ -206,18 +206,21 @@ function CarouselDots() {
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([])
 
   React.useEffect(() => {
-    if (!api) return
+  if (!api) return;
 
-    setScrollSnaps(api.scrollSnapList())
-    setSelectedIndex(api.selectedScrollSnap())
+  setScrollSnaps(api.scrollSnapList());
+  setSelectedIndex(api.selectedScrollSnap());
 
-    const onSelect = () => {
-      setSelectedIndex(api.selectedScrollSnap())
-    }
+  const onSelect = () => {
+    setSelectedIndex(api.selectedScrollSnap());
+  };
 
-    api.on("select", onSelect)
-    return () => api.off("select", onSelect)
-  }, [api])
+  api.on("select", onSelect);
+
+  return () => {
+    api.off("select", onSelect); // ✅ call inside a function block
+  };
+}, [api]);
 
   return (
     <div className="flex justify-center mt-4 gap-2">
