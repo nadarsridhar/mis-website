@@ -44,7 +44,7 @@ export default function LandingPage() {
                 </Link>
               </div>
             </div>
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center gap-4">
               <Link href="#home" className="text-coral-500 hover:text-coral-600 transition-colors font-medium">
                 Home
               </Link>
