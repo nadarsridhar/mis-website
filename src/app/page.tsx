@@ -44,7 +44,7 @@ export default function LandingPage() {
                 </Link>
               </div>
             </div>
-            <nav className="hidden md:flex items-center gap-4">
+            <nav className="hidden md:flex items-center gap-8">
               <Link href="#home" className="text-coral-500 hover:text-coral-600 transition-colors font-medium">
                 Home
               </Link>
@@ -66,8 +66,8 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      
-      <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-25 bg-gradient-to-br from-gray-50 to-blue-50">
+
+      <section id="home" className="pt-48 pb-12 md:pt md:pb-25 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
