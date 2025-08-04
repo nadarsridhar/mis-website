@@ -30,10 +30,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay"
 import { useState } from "react"
 import { Menu,X } from "lucide-react"
+import ContactForm from "@/app/ContactForm"
+
 
 export default function LandingPage() {
-
-
   const [isOpen, setisOpen] = useState(false)
   const toggleMenu = ()=> setisOpen(!isOpen)
   return (
@@ -370,51 +370,9 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className=" ">
+            <div className="">
                <div className="p-8 bg-white rounded-xl shadow-md max-w-3xl m mx-auto">
-                <form className="space-y-6 ">
-                  <div className="">
-                  {/* Name and Surname */}
-                  <div className="flex flex-col md:flex-row gap-4 pb-7">
-                    <input
-                     required
-                      type="text"
-                      // rows={7}
-                      placeholder="Name"
-                      className="w-full bg-blue-50 text-black rounded-lg px-6 py-3 outline-blue-700 "
-                    />
-                    <input
-                      type="text"
-                      placeholder="Surname"
-                      className="w-full bg-blue-50 text-black rounded-lg px-6 py-3 outline-blue-700 "
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <input
-                    type="email"
-                    required
-                    placeholder="Your Email"
-                    className="w-full bg-blue-50 text-black rounded-lg px-6 py-3 outline-blue-700  "
-                  />
-
-                  {/* Message */}
-                  <textarea
-                    placeholder="Message"
-                    // rows="5"
-                    className="w-full bg-blue-50 text-black rounded-lg  outline-blue-700 resize-none mt-10 p-5  "
-                  ></textarea>
-
-                  {/* Button */}
-                  <button
-                    type="submit"
-                    className="bg-coral-500 text-white px-6 bg-blue-700 py-3 mt-5 rounded-lg hover:bg-coral-600 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 font-medium"
-                  >
-                    Send Message
-                  </button>
-                  </div>
-                  
-                </form>
+             <ContactForm />
 
               </div>
 
