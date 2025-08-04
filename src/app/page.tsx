@@ -28,46 +28,58 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay"
+import { useState } from "react"
+import { Menu,X } from "lucide-react"
 
 export default function LandingPage() {
+
+
+  const [isOpen, setisOpen] = useState(false)
+  const toggleMenu = ()=> setisOpen(!isOpen)
   return (
     
     <div className="min-h-screen bg-white">
-      {/* Header */}
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-30">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="">
-                <Link  href="#home" >
-                <img src="/img/logo.png" width="140" height="140"/>
-                </Link>
-              </div>
+              <Link href="#home">
+                <img src="/img/logo.png" alt="Logo" width="140" height="140" />
+              </Link>
             </div>
+
+            {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8">
-              <Link href="#home" className="text-coral-500 hover:text-coral-600 transition-colors font-medium">
-                Home
-              </Link>
-              <Link href="#services" className="text-gray-600 hover:text-gray-900 transition-colors">
-                ContactIQ
-              </Link>
-              <Link href="#market-data" className="text-gray-600 hover:text-gray-900 transition-colors">
-                Market Data
-              </Link>
-              <Link
-                href="#contact"
-                className="bg-coral-500 text-white px-6 bg-blue-700 py-3 rounded-lg hover:bg-coral-600 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 font-medium"
-              >
-                Contact Now
-              </Link>
+              <Link href="#home" className="text-coral-500 hover:text-coral-600 transition-colors font-medium">Home</Link>
+              <Link href="#services" className="text-gray-600 hover:text-gray-900 transition-colors">ContactIQ</Link>
+              <Link href="#market-data" className="text-gray-600 hover:text-gray-900 transition-colors">Market Data</Link>
+              <Link href="#contact" className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 font-medium">Contact Now</Link>
             </nav>
+
+            {/* Hamburger (mobile only) */}
+            <div className="md:hidden">
+              <button onClick={toggleMenu}>
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isOpen && (
+            <div className="md:hidden mt-2 space-y-2 pb-4 rounded-xl  items-center justify-evenly">
+              <Link href="#home" onClick={() => setisOpen(false)} className="block py-2 p-10 px-2 text-sm  text-gray-900 hover:bg-gray-100 rounded-lg">Home</Link>
+              <Link href="#services" onClick={() => setisOpen(false)} className="block py-2 px-2  text-sm   text-gray-900 hover:bg-gray-100 rounded-lg">ContactIQ</Link>
+              <Link href="#market-data" onClick={() => setisOpen(false)} className="block py-2 px-2  text-sm   text-gray-900 hover:bg-gray-100 rounded-lg">Market Data</Link>
+              <Link href="#contact" onClick={() => setisOpen(false)} className="block py-2 px-2 text-sm   text-gray-900 rounded-lg">Contact Now</Link>
+            </div> 
+          )}
         </div>
       </header>
 
       {/* Hero Section */}
 
-      <section id="home" className="pt-48 pb-12 md:pt md:pb-25 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="home" className="pt-25 pb-12 md:pt md:pb-25 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -112,14 +124,14 @@ export default function LandingPage() {
                     <CarouselContent>
                           <CarouselItem>
                             <div className="overflow-hidden">
-                              <img src="/5124556.png" alt="" width="500px" height="500px"/>
+                              <img src="/5124556.png" alt="ContactIQ" width="500px" height="500px"/>
                               <p className="flex justify-center items-center space-y-3 font-bold text-4xl text-blue-700">ContactIQ</p>
                             </div>
                             
                           </CarouselItem>
                           <CarouselItem>
                             <div className=" flex justify-center items-center w-full ">
-                              <img src="/marketdata5.png"  width="500px" height="350px"/>
+                              <img src="/marketdata5.png" alt="Marketdata"  width="500px" height="350px"/>
                             </div>
                               <p className="pb-10 flex justify-center items-center font-bold text-4xl text-blue-700">Market Data</p>
                             
@@ -150,25 +162,25 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon:(<img src="/img/centralized.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/centralized.png" alt="Centralized Control" width="40"></img>),
                 title: "Centralized Control",
                 description:
                   "Centralized call recording management with branch-level controls."
               },
               {
-                icon:(<img src="/img/smart2.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/smart2.png" alt="Smart call Routing" width="40"></img>),
                 title: "Smart Call Routing",
                 description:
                   "Order-to-call matching, voicemail support, and template-based call routing.",
               },
               {
-                icon:(<img src="/img/secure2.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/secure2.png" alt="Secure & Trusted" width="40"></img>),
                 title: "Secure & Trusted",
                 description:
                   "Meets SEBI & TRAI regulations for voice logging and audit-ready reporting.",
               },
               {
-                icon:(<img src="/img/personal.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/personal.png" alt="Professional Presence" width="40"></img>),
                 title: "Professional Presence",
                 description:
                   "Establish brand credibility with consistent, easy-to-remember contact number.",
@@ -215,12 +227,12 @@ export default function LandingPage() {
               </p>
 
              
-                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image.png" alt="" width={25} height={25} className="m-3"/><span>Click To Call</span></div>
-                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image2.png" alt="" width={25} height={25} className="m-3"/><span>Interactive Voice Response</span></div>
-                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/imagecopy2.png" alt="" width={25} height={25}  className="m-3"/><span>Outbound Dialer</span></div>
-                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image3.png" alt="" width={25} height={25} className="m-3"/><span>Mobile and Landline CLI</span></div>
-                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image4.png" alt="" width={25} height={25} className="m-3"/><span>Toll-Free</span></div>
-                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image5.png" alt="" width={25} height={25} className="m-3"/><span>Number Masking</span></div>
+                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image.png" alt="Click To Call" width={25} height={25} className="m-3"/><span>Click To Call</span></div>
+                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image2.png" alt="Interactive Voice Response" width={25} height={25} className="m-3"/><span>Interactive Voice Response</span></div>
+                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/imagecopy2.png" alt="Outbound Dialer" width={25} height={25}  className="m-3"/><span>Outbound Dialer</span></div>
+                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image3.png" alt="Mobile and Landline CLI" width={25} height={25} className="m-3"/><span>Mobile and Landline CLI</span></div>
+                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image4.png" alt="Toll-Free" width={25} height={25} className="m-3"/><span>Toll-Free</span></div>
+                <div className="flex items-center font-bold text-xl text-blue-800"><img src="/img/image5.png" alt="Number Masking" width={25} height={25} className="m-3"/><span>Number Masking</span></div>
             </div>
           </div>
         </div>
@@ -250,18 +262,18 @@ export default function LandingPage() {
                   "Instant visibility into every executed trade with price, volume, and timestamp.",
               },
               {
-                icon:(<img src="/img/order.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/order.png" alt="Full Order Book Depth" width="40"></img>),
                 title: "Full Order Book Depth",
                 description: "Full market depth with all order additions, updates, and cancellations.",
               },
               {
-                icon:(<img src="/img/replay.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/replay.png" alt="Replay for Audit & Insight" width="40"></img>),
                 title: "Replay for Audit & Insight",
                 description:
                   "Replay market ticks for audit, training, or trade pattern validation.",
               },
               {
-                icon:(<img src="/img/secure.png" alt="live price upates" width="40"></img>),
+                icon:(<img src="/img/secure.png" alt="Seemless Integration" width="40"></img>),
                 title: "Seemless Integration",
                 description: "Integrate ultra fast market data with your existing applications without any changes.",
               },

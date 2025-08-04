@@ -38,7 +38,7 @@ body {
   .animate-slide-up {
     animation: slideUp 0.8s ease-out;
   }
-
+  
   .animate-slide-up-delay {
     animation: slideUp 1s ease-out;
   }
