@@ -51,16 +51,16 @@ export default function LandingPage() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8">
-              <Link href="#home" className="text-coral-500 hover:text-coral-600 transition-colors font-medium">Home</Link>
-              <Link href="#services" className="text-gray-600 hover:text-gray-900 transition-colors">ContactIQ</Link>
-              <Link href="#market-data" className="text-gray-600 hover:text-gray-900 transition-colors">Market Data</Link>
+              <Link href="#home" className=" text-gray-800 hover:text-gray-900 transition-colors font-medium">Home</Link>
+              <Link href="#services" className="text-gray-800 hover:text-gray-900 transition-colors font-medium">ContactIQ</Link>
+              <Link href="#market-data" className="text-gray-800 hover:text-gray-900 transition-colors font-medium">Market Data</Link>
               <Link href="#contact" className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 font-medium">Contact Now</Link>
             </nav>
 
             {/* Hamburger (mobile only) */}
             <div className="md:hidden">
               <button onClick={toggleMenu}>
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
+                {isOpen ? <X className="text-blue-700" size={28} /> : <Menu className="text-blue-700" size={28} />}
               </button>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
 
-      <section id="home" className="pt-25 pb-12 md:pt md:pb-25 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="home" className="pt-30 pb-12 md:pt md:pb-25 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -143,12 +143,12 @@ export default function LandingPage() {
               </div>
           </div>
         </div>
-        <div id="services" className="h-5"></div>
+        <div id="services" className=""></div>
       </section>
 
       {/* Services Section */}
       
-      <section  className="py-25 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section  className="py-15 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -203,7 +203,7 @@ export default function LandingPage() {
       
 
       {/* Benefits Section */}
-      <section className="py-25 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section className="py-15 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -236,13 +236,13 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div id="market-data" className="h-5"></div>
+        <div id="market-data" className=""></div>
       </section>
 
 
        {/* Services Section */}
         
-      <section  className="py-25 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section  className="py-15 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -291,7 +291,7 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
-        <div id="contact" className="h-5"></div>
+        <div id="contact" className=""></div>
       </section>
 
 
@@ -358,7 +358,7 @@ export default function LandingPage() {
 
       {/* Contact Form Section */} 
       
-      <section  className="py-25 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section  className="py-15 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
