@@ -103,7 +103,7 @@ export default function LandingPage() {
                 </Link>
               </div>
 
-              <div className="flex items-center space-x-8 text-sm text-gray-600 animate-fade-in-delay">
+              <div className="flex items-center space-x-8 gap-4 text-sm text-gray-600 animate-fade-in-delay">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
                   Cloud-First Solutions
