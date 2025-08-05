@@ -1,5 +1,9 @@
 {
+    
     "SERVICE_ID":"service_tcoqbrh",
     "TEMPLATE_ID":"template_x2bu9zv",
-    "PUBLIC_KEY":"ywXxTa0acTO9tdQkB"
+    "PUBLIC_KEY":"ywXxTa0acTO9tdQkB",
+    "RECAPTCHA_SITE_KEY":"6LfR6JorAAAAAEdOExC6gU5iNDJugxt-Kk1X7aSu"
+    
+    
 }

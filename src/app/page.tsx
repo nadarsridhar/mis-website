@@ -31,6 +31,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { useState } from "react"
 import { Menu,X } from "lucide-react"
 import ContactForm from "@/app/ContactForm"
+import { Toaster } from 'react-hot-toast';
 
 
 export default function LandingPage() {
@@ -372,6 +373,7 @@ export default function LandingPage() {
 
             <div className="">
                <div className="p-8 bg-white rounded-xl shadow-md max-w-3xl m mx-auto">
+                <Toaster position="top-center" reverseOrder={false} />
              <ContactForm />
 
               </div>
